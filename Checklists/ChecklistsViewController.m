@@ -18,49 +18,46 @@
 
 }
 
+
+- (NSString *)documentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+}
+
+- (NSString *)dataFilePath
+{
+    return [[self documentsDirectory] stringByAppendingPathComponent:@"Checklist.plist"];
+}
+
+
+- (void)loadChecklistItems 
+{
+    NSString *path = [self dataFilePath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        items = [unarchiver decodeObjectForKey:@"ChecklistItems"];
+        [unarchiver finishDecoding];
+    } else {
+        items = [[NSMutableArray alloc] initWithCapacity:20];
+    }
+}
+
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder])) {
+        [self loadChecklistItems];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    items = [[NSMutableArray alloc] initWithCapacity:20];
-    
-    ChecklistItem *item;
-
-    item = [[ChecklistItem alloc] init];
-    item.text = @"Pay bills";
-    item.checked = NO;
-    [items addObject:item];
-    
-    item = [[ChecklistItem alloc] init];
-    item.text = @"Go running";
-    item.checked = YES;
-    [items addObject:item];
-    
-    item = [[ChecklistItem alloc] init];
-    item.text = @"Walk the dog";
-    item.checked = NO;
-    [items addObject:item];
-    
-    item = [[ChecklistItem alloc] init];
-    item.text = @"Brush teeth";
-    item.checked = YES;
-    [items addObject:item];
-    
-    item = [[ChecklistItem alloc] init];
-    item.text = @"Learn iOS development";
-    item.checked = YES;
-    [items addObject:item];
-    
-    item = [[ChecklistItem alloc] init];
-    item.text = @"Soccer practice";
-    item.checked = NO;
-    [items addObject:item];
-    
-    item = [[ChecklistItem alloc] init];
-    item.text = @"Eat ice cream";
-    item.checked = YES;
-    [items addObject:item];
-
 }
 
 - (void)viewDidUnload
@@ -103,6 +100,8 @@
         
     [self configureCheckmarkForCell:cell withChecklistItem:item];
     
+    [self saveChecklistItems];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 /* END handles the user's "selection" tap */
@@ -110,11 +109,14 @@
 /* HELPER functions to make our business logic above cleaner */
 - (void)configureCheckmarkForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
 {
+    // TODO: Our own exercise. Instead of using the ugly looking √, we figure out how to assign a pretty image-based tick.
+    
+    UILabel *label = (UILabel *)[cell viewWithTag:1001];
     
     if (item.checked) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        label.text = @"√";
     } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        label.text = @"";
     }
 }
 
@@ -128,26 +130,78 @@
 {
     [items removeObjectAtIndex:indexPath.row];
     
+    [self saveChecklistItems];
+    
     NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
     [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 /* END HELPER functions */
 
-- (IBAction)addItem
+
+
+
+- (void)itemDetailViewControllerDidCancel:(ItemDetailViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)itemDetailViewController:(ItemDetailViewController *)controller didFinishAddingItem:(ChecklistItem *)item
 {
     int newRowIndex = [items count];
-    
-    ChecklistItem *item = [[ChecklistItem alloc] init];
-    item.text = @"I am a new row";
-    item.checked = NO;
     [items addObject:item];
- 
+    
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
     NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
     
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self saveChecklistItems]; 
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+- (void)itemDetailViewController:(ItemDetailViewController *)controller didFinishEditingItem:(ChecklistItem *)item
+{
+    int index = [items indexOfObject:item];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    [self configureTextForCell:cell withChecklistItem:item];
+    [self saveChecklistItems]; 
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AddItem"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        ItemDetailViewController *controller = (ItemDetailViewController *)navigationController.topViewController;
+        controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"EditItem"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        ItemDetailViewController *controller = (ItemDetailViewController *)navigationController.topViewController;
+        controller.delegate = self;
+        controller.itemToEdit = sender;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    ChecklistItem *item = [items objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"EditItem" sender:item];
+}
+
+
+- (void)saveChecklistItems
+{
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [archiver encodeObject:items forKey:@"ChecklistItems"];
+    [archiver finishEncoding];
+    [data writeToFile:[self dataFilePath] atomically:YES];
+}
+
 
 @end
