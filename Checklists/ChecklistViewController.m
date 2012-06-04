@@ -6,18 +6,18 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "ChecklistsViewController.h"
+#import "ChecklistViewController.h"
 #import "ChecklistItem.h"
+#import "Checklist.h"
 
-@interface ChecklistsViewController ()
+@interface ChecklistViewController ()
 @end
 
-@implementation ChecklistsViewController {
-
+@implementation ChecklistViewController {
     NSMutableArray *items;
-
 }
 
+@synthesize checklist;
 
 - (NSString *)documentsDirectory
 {
@@ -58,6 +58,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = self.checklist.name;
 }
 
 - (void)viewDidUnload
