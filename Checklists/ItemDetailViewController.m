@@ -28,9 +28,11 @@
 - (IBAction)done
 {
     if (self.itemToEdit == nil) {
+        // Adding a new item if it is not an item that is being edited.
         ChecklistItem *item = [[ChecklistItem alloc] init];
         item.text = self.textField.text;
         item.checked = NO;
+        NSLog(@"This is our add/edit item view controller's delegate: %@", self.delegate);
         [self.delegate itemDetailViewController:self didFinishAddingItem:item];        
     } else {
         self.itemToEdit.text = self.textField.text;

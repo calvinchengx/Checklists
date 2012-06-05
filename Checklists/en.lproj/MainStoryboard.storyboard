@@ -139,7 +139,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="pL3-N6-t7N">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wfd-xo-hcl">
                             <connections>
-                                <segue destination="hJ9-nW-rcZ" kind="modal" id="85t-QY-Vnq"/>
+                                <segue destination="hJ9-nW-rcZ" kind="modal" identifier="AddChecklist" modalTransitionStyle="flipHorizontal" id="85t-QY-Vnq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -295,6 +295,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Zc1-pC-cny"/>
+        <segue reference="F6E-UR-afe"/>
     </inferredMetricsTieBreakers>
 </document>

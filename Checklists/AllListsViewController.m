@@ -9,7 +9,7 @@
 #import "AllListsViewController.h"
 #import "ChecklistViewController.h"
 #import "Checklist.h"
-
+#import "ChecklistItem.h"
 
 @interface AllListsViewController ()
 
@@ -19,29 +19,46 @@
     NSMutableArray *lists;
 }
 
+- (NSString *)documentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+}
+
+- (NSString *)dataFilePath
+{
+    return [[self documentsDirectory] stringByAppendingPathComponent:@"Checklists.plists"];
+}
+
+- (void)saveChecklists
+{
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [archiver encodeObject:lists forKey:@"Checklists"];
+    [archiver finishEncoding];
+    [data writeToFile:[self dataFilePath] atomically:YES];    
+}
+
+- (void)loadChecklists
+{
+    NSString *path = [self dataFilePath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) 
+    {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        lists = [unarchiver decodeObjectForKey:@"Checklists"];
+        [unarchiver finishDecoding];
+    } else {
+        lists = [[NSMutableArray alloc] initWithCapacity:20];
+    }
+}
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder])) {
-        lists = [[NSMutableArray alloc] initWithCapacity:20];
-        
-        Checklist *list;
-        
-        list = [[Checklist alloc] init];
-        list.name = @"Birthdays";
-        [lists addObject:list];
-        
-        list = [[Checklist alloc] init];
-        list.name = @"Groceries";
-        [lists addObject:list];
-        
-        list = [[Checklist alloc] init];
-        list.name = @"Cool Apps";
-        [lists addObject:list];
-        
-        list = [[Checklist alloc] init];
-        list.name = @"To Do";
-        [lists addObject:list];        
+        [self loadChecklists];
     }
     return self;
 }
