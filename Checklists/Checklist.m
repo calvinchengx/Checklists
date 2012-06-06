@@ -13,6 +13,25 @@
 @synthesize name;
 @synthesize items;
 
+/*
+-(id) init {
+    if((self = [super init])) {
+        self.items = [NSMutableArray array];
+    }
+    return self;
+}
+*/
+
+
+-(NSMutableArray *)items
+{
+    if(!items) {
+        items = [[NSMutableArray alloc] init];
+    }
+    return items;
+}
+
+// Equivalent code - (id)init and -(NSMutableArray *)items
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {

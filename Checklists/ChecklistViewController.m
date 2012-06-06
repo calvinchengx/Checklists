@@ -131,10 +131,7 @@
 - (void)itemDetailViewController:(ItemDetailViewController *)controller didFinishAddingItem:(ChecklistItem *)item
 {
     int newRowIndex = [self.checklist.items count];
-    NSLog(@"This is our item: %@", item);
-    NSLog(@"This is our newRowIndex: %d", newRowIndex);
     [self.checklist.items addObject:item];
-    NSLog(@"This is our checklist items: %@", self.checklist);  
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
     NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
