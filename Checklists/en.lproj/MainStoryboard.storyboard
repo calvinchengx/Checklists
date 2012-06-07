@@ -10,7 +10,7 @@
         <scene sceneID="BYh-5o-HGu">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBt-iZ-O0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="3jw-Aa-Jb6" customClass="ChecklistViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="" id="3jw-Aa-Jb6" customClass="ChecklistViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Fz5-Y8-0bC">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2269" y="-482"/>
+            <point key="canvasLocation" x="2289" y="-482"/>
         </scene>
         <!--All Lists View Controller - Checklists-->
         <scene sceneID="Mdx-fD-va4">
@@ -199,7 +199,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1278" y="236"/>
+            <point key="canvasLocation" x="1763" y="236"/>
         </scene>
         <!--List Detail View Controller - Add Checklist-->
         <scene sceneID="Vs8-dd-qPT">
@@ -260,41 +260,15 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1773" y="236"/>
+            <point key="canvasLocation" x="2258" y="236"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AllListsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AllListsViewController.h"/>
-        </class>
-        <class className="ChecklistViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChecklistViewController.h"/>
-        </class>
-        <class className="ItemDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel"/>
-                <relationship kind="action" name="done"/>
-                <relationship kind="outlet" name="doneBarButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ListDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel"/>
-                <relationship kind="action" name="done"/>
-                <relationship kind="outlet" name="doneBarButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="F6E-UR-afe"/>
+        <segue reference="Zc1-pC-cny"/>
     </inferredMetricsTieBreakers>
 </document>
