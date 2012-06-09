@@ -80,7 +80,12 @@
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    if (indexPath.row == 1) {
+        return indexPath;        
+    } else {
+        return nil;        
+    }
+
 }
 
 - (BOOL)textField:(UITextField *)theTextfield shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;

@@ -31,6 +31,9 @@
 
 @property (nonatomic, strong) Checklist *checklistToEdit;
 
+@property (nonatomic, strong) UIImageView *iconImageView;
+
+
 - (IBAction)cancel;
 - (IBAction)done;
 
