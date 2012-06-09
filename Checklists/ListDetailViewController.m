@@ -19,6 +19,7 @@
 @synthesize doneBarButton;
 @synthesize delegate;
 @synthesize checklistToEdit;
+@synthesize iconImageView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

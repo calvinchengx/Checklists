@@ -181,7 +181,6 @@
 
 - (void)listDetailViewController:(ListDetailViewController *)controller didFinishEditingChecklist:(Checklist *)checklist
 {
-    int index = [self.dataModel.lists indexOfObject:checklist];
     [self.dataModel sortChecklists];
     [self.tableView reloadData];
     
