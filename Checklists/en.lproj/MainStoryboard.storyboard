@@ -328,36 +328,6 @@
             <point key="canvasLocation" x="2720" y="236"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AllListsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AllListsViewController.h"/>
-        </class>
-        <class className="ChecklistViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChecklistViewController.h"/>
-        </class>
-        <class className="IconPickerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IconPickerViewController.h"/>
-        </class>
-        <class className="ItemDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel"/>
-                <relationship kind="action" name="done"/>
-                <relationship kind="outlet" name="doneBarButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ListDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel"/>
-                <relationship kind="action" name="done"/>
-                <relationship kind="outlet" name="doneBarButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="iconImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

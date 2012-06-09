@@ -22,13 +22,9 @@
 @interface ListDetailViewController : UITableViewController
 
 @property (nonatomic, strong) IBOutlet UITextField *textField;
-
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneBarButton;
-
 @property (nonatomic, weak) id <ListDetailViewControllerDelegate> delegate;
-
 @property (nonatomic, strong) Checklist *checklistToEdit;
-
 @property (strong, nonatomic) IBOutlet UIImageView *iconImageView;
 
 - (IBAction)cancel;

@@ -150,7 +150,6 @@
 				3E5F3DFE157466A30097C9F2 /* ChecklistViewController.m */,
 				3EEF20EF1578940100A41882 /* ChecklistItem.h */,
 				3EEF20F01578940100A41882 /* ChecklistItem.m */,
-				3E5F3DEF157466A30097C9F2 /* Supporting Files */,
 				3EB912E8157C714F00BE8FEA /* Checklist.h */,
 				3EB912E9157C714F00BE8FEA /* Checklist.m */,
 				3EFA9AF315830C0100BB2FA5 /* IconPickerViewController.h */,
@@ -159,6 +158,7 @@
 				3EB912EC157C834A00BE8FEA /* ListDetailViewController.m */,
 				3E4B401B157F507500A1B64F /* DataModel.h */,
 				3E4B401C157F507500A1B64F /* DataModel.m */,
+				3E5F3DEF157466A30097C9F2 /* Supporting Files */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
