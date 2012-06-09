@@ -96,6 +96,8 @@
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Remaining", [checklist countUncheckedItems]];
     }
     
+    cell.imageView.image = [UIImage imageNamed:checklist.iconName];
+    
     return cell;
 }
 

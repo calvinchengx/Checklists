@@ -21,6 +21,27 @@
 		3EB912F0157C9A4500BE8FEA /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB912EF157C9A4400BE8FEA /* AllListsViewController.m */; };
 		3EEF20F11578940100A41882 /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF20F01578940100A41882 /* ChecklistItem.m */; };
 		3EEF20F51578C39F00A41882 /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF20F41578C39F00A41882 /* ItemDetailViewController.m */; };
+		3EFA9ADE1583041A00BB2FA5 /* Appointments.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9ACA1583041A00BB2FA5 /* Appointments.png */; };
+		3EFA9ADF1583041A00BB2FA5 /* Appointments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9ACB1583041A00BB2FA5 /* Appointments@2x.png */; };
+		3EFA9AE01583041A00BB2FA5 /* Birthdays.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9ACC1583041A00BB2FA5 /* Birthdays.png */; };
+		3EFA9AE11583041A00BB2FA5 /* Birthdays@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9ACD1583041A00BB2FA5 /* Birthdays@2x.png */; };
+		3EFA9AE21583041A00BB2FA5 /* Chores.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9ACE1583041A00BB2FA5 /* Chores.png */; };
+		3EFA9AE31583041A00BB2FA5 /* Chores@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9ACF1583041A00BB2FA5 /* Chores@2x.png */; };
+		3EFA9AE41583041A00BB2FA5 /* Drinks.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9AD01583041A00BB2FA5 /* Drinks.png */; };
+		3EFA9AE51583041A00BB2FA5 /* Drinks@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9AD11583041A00BB2FA5 /* Drinks@2x.png */; };
+		3EFA9AE61583041A00BB2FA5 /* Folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9AD21583041A00BB2FA5 /* Folder.png */; };
+		3EFA9AE71583041A00BB2FA5 /* Folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9AD31583041A00BB2FA5 /* Folder@2x.png */; };
+		3EFA9AE81583041A00BB2FA5 /* Groceries.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9AD41583041A00BB2FA5 /* Groceries.png */; };
+		3EFA9AE91583041A00BB2FA5 /* Groceries@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9AD51583041A00BB2FA5 /* Groceries@2x.png */; };
+		3EFA9AEA1583041A00BB2FA5 /* Inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9AD61583041A00BB2FA5 /* Inbox.png */; };
+		3EFA9AEB1583041A00BB2FA5 /* Inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9AD71583041A00BB2FA5 /* Inbox@2x.png */; };
+		3EFA9AEC1583041A00BB2FA5 /* No Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9AD81583041A00BB2FA5 /* No Icon.png */; };
+		3EFA9AED1583041A00BB2FA5 /* No Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9AD91583041A00BB2FA5 /* No Icon@2x.png */; };
+		3EFA9AEE1583041A00BB2FA5 /* Photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9ADA1583041A00BB2FA5 /* Photos.png */; };
+		3EFA9AEF1583041A00BB2FA5 /* Photos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9ADB1583041A00BB2FA5 /* Photos@2x.png */; };
+		3EFA9AF01583041A00BB2FA5 /* Trips.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9ADC1583041A00BB2FA5 /* Trips.png */; };
+		3EFA9AF11583041A00BB2FA5 /* Trips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA9ADD1583041A00BB2FA5 /* Trips@2x.png */; };
+		3EFA9AF515830C0100BB2FA5 /* IconPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFA9AF415830C0100BB2FA5 /* IconPickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +70,28 @@
 		3EEF20F01578940100A41882 /* ChecklistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItem.m; sourceTree = "<group>"; };
 		3EEF20F31578C39E00A41882 /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
 		3EEF20F41578C39F00A41882 /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
+		3EFA9ACA1583041A00BB2FA5 /* Appointments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Appointments.png; sourceTree = "<group>"; };
+		3EFA9ACB1583041A00BB2FA5 /* Appointments@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Appointments@2x.png"; sourceTree = "<group>"; };
+		3EFA9ACC1583041A00BB2FA5 /* Birthdays.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Birthdays.png; sourceTree = "<group>"; };
+		3EFA9ACD1583041A00BB2FA5 /* Birthdays@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Birthdays@2x.png"; sourceTree = "<group>"; };
+		3EFA9ACE1583041A00BB2FA5 /* Chores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chores.png; sourceTree = "<group>"; };
+		3EFA9ACF1583041A00BB2FA5 /* Chores@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chores@2x.png"; sourceTree = "<group>"; };
+		3EFA9AD01583041A00BB2FA5 /* Drinks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drinks.png; sourceTree = "<group>"; };
+		3EFA9AD11583041A00BB2FA5 /* Drinks@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Drinks@2x.png"; sourceTree = "<group>"; };
+		3EFA9AD21583041A00BB2FA5 /* Folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Folder.png; sourceTree = "<group>"; };
+		3EFA9AD31583041A00BB2FA5 /* Folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Folder@2x.png"; sourceTree = "<group>"; };
+		3EFA9AD41583041A00BB2FA5 /* Groceries.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Groceries.png; sourceTree = "<group>"; };
+		3EFA9AD51583041A00BB2FA5 /* Groceries@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Groceries@2x.png"; sourceTree = "<group>"; };
+		3EFA9AD61583041A00BB2FA5 /* Inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Inbox.png; sourceTree = "<group>"; };
+		3EFA9AD71583041A00BB2FA5 /* Inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Inbox@2x.png"; sourceTree = "<group>"; };
+		3EFA9AD81583041A00BB2FA5 /* No Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No Icon.png"; sourceTree = "<group>"; };
+		3EFA9AD91583041A00BB2FA5 /* No Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No Icon@2x.png"; sourceTree = "<group>"; };
+		3EFA9ADA1583041A00BB2FA5 /* Photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Photos.png; sourceTree = "<group>"; };
+		3EFA9ADB1583041A00BB2FA5 /* Photos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Photos@2x.png"; sourceTree = "<group>"; };
+		3EFA9ADC1583041A00BB2FA5 /* Trips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trips.png; sourceTree = "<group>"; };
+		3EFA9ADD1583041A00BB2FA5 /* Trips@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trips@2x.png"; sourceTree = "<group>"; };
+		3EFA9AF315830C0100BB2FA5 /* IconPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconPickerViewController.h; sourceTree = "<group>"; };
+		3EFA9AF415830C0100BB2FA5 /* IconPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconPickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +138,7 @@
 		3E5F3DEE157466A30097C9F2 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				3EFA9AC91583041A00BB2FA5 /* Checklist Icons */,
 				3EB912EE157C9A4400BE8FEA /* AllListsViewController.h */,
 				3EB912EF157C9A4400BE8FEA /* AllListsViewController.m */,
 				3E5F3DF7157466A30097C9F2 /* ChecklistsAppDelegate.h */,
@@ -109,6 +153,8 @@
 				3E5F3DEF157466A30097C9F2 /* Supporting Files */,
 				3EB912E8157C714F00BE8FEA /* Checklist.h */,
 				3EB912E9157C714F00BE8FEA /* Checklist.m */,
+				3EFA9AF315830C0100BB2FA5 /* IconPickerViewController.h */,
+				3EFA9AF415830C0100BB2FA5 /* IconPickerViewController.m */,
 				3EB912EB157C834A00BE8FEA /* ListDetailViewController.h */,
 				3EB912EC157C834A00BE8FEA /* ListDetailViewController.m */,
 				3E4B401B157F507500A1B64F /* DataModel.h */,
@@ -126,6 +172,33 @@
 				3E5F3DF6157466A30097C9F2 /* Checklists-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3EFA9AC91583041A00BB2FA5 /* Checklist Icons */ = {
+			isa = PBXGroup;
+			children = (
+				3EFA9ACA1583041A00BB2FA5 /* Appointments.png */,
+				3EFA9ACB1583041A00BB2FA5 /* Appointments@2x.png */,
+				3EFA9ACC1583041A00BB2FA5 /* Birthdays.png */,
+				3EFA9ACD1583041A00BB2FA5 /* Birthdays@2x.png */,
+				3EFA9ACE1583041A00BB2FA5 /* Chores.png */,
+				3EFA9ACF1583041A00BB2FA5 /* Chores@2x.png */,
+				3EFA9AD01583041A00BB2FA5 /* Drinks.png */,
+				3EFA9AD11583041A00BB2FA5 /* Drinks@2x.png */,
+				3EFA9AD21583041A00BB2FA5 /* Folder.png */,
+				3EFA9AD31583041A00BB2FA5 /* Folder@2x.png */,
+				3EFA9AD41583041A00BB2FA5 /* Groceries.png */,
+				3EFA9AD51583041A00BB2FA5 /* Groceries@2x.png */,
+				3EFA9AD61583041A00BB2FA5 /* Inbox.png */,
+				3EFA9AD71583041A00BB2FA5 /* Inbox@2x.png */,
+				3EFA9AD81583041A00BB2FA5 /* No Icon.png */,
+				3EFA9AD91583041A00BB2FA5 /* No Icon@2x.png */,
+				3EFA9ADA1583041A00BB2FA5 /* Photos.png */,
+				3EFA9ADB1583041A00BB2FA5 /* Photos@2x.png */,
+				3EFA9ADC1583041A00BB2FA5 /* Trips.png */,
+				3EFA9ADD1583041A00BB2FA5 /* Trips@2x.png */,
+			);
+			path = "Checklist Icons";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +254,26 @@
 			files = (
 				3E5F3DF3157466A30097C9F2 /* InfoPlist.strings in Resources */,
 				3E5F3DFC157466A30097C9F2 /* MainStoryboard.storyboard in Resources */,
+				3EFA9ADE1583041A00BB2FA5 /* Appointments.png in Resources */,
+				3EFA9ADF1583041A00BB2FA5 /* Appointments@2x.png in Resources */,
+				3EFA9AE01583041A00BB2FA5 /* Birthdays.png in Resources */,
+				3EFA9AE11583041A00BB2FA5 /* Birthdays@2x.png in Resources */,
+				3EFA9AE21583041A00BB2FA5 /* Chores.png in Resources */,
+				3EFA9AE31583041A00BB2FA5 /* Chores@2x.png in Resources */,
+				3EFA9AE41583041A00BB2FA5 /* Drinks.png in Resources */,
+				3EFA9AE51583041A00BB2FA5 /* Drinks@2x.png in Resources */,
+				3EFA9AE61583041A00BB2FA5 /* Folder.png in Resources */,
+				3EFA9AE71583041A00BB2FA5 /* Folder@2x.png in Resources */,
+				3EFA9AE81583041A00BB2FA5 /* Groceries.png in Resources */,
+				3EFA9AE91583041A00BB2FA5 /* Groceries@2x.png in Resources */,
+				3EFA9AEA1583041A00BB2FA5 /* Inbox.png in Resources */,
+				3EFA9AEB1583041A00BB2FA5 /* Inbox@2x.png in Resources */,
+				3EFA9AEC1583041A00BB2FA5 /* No Icon.png in Resources */,
+				3EFA9AED1583041A00BB2FA5 /* No Icon@2x.png in Resources */,
+				3EFA9AEE1583041A00BB2FA5 /* Photos.png in Resources */,
+				3EFA9AEF1583041A00BB2FA5 /* Photos@2x.png in Resources */,
+				3EFA9AF01583041A00BB2FA5 /* Trips.png in Resources */,
+				3EFA9AF11583041A00BB2FA5 /* Trips@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +293,7 @@
 				3EB912ED157C834A00BE8FEA /* ListDetailViewController.m in Sources */,
 				3EB912F0157C9A4500BE8FEA /* AllListsViewController.m in Sources */,
 				3E4B401D157F507600A1B64F /* DataModel.m in Sources */,
+				3EFA9AF515830C0100BB2FA5 /* IconPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

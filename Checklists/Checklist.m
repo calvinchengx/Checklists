@@ -13,6 +13,7 @@
 
 @synthesize name;
 @synthesize items;
+@synthesize iconName;
 
 /*
 -(id) init {
@@ -22,6 +23,15 @@
     return self;
 }
 */
+
+- (id)init
+{
+    if ((self = [super init])) {
+        self.items = [[NSMutableArray alloc] initWithCapacity:20];
+        self.iconName = @"No Icon";
+    }
+    return self;
+}
 
 -(NSMutableArray *)items
 {
@@ -54,6 +64,7 @@
     if ((self = [super init])) {
         self.name = [aDecoder decodeObjectForKey:@"Name"];
         self.items = [aDecoder decodeObjectForKey:@"Items"];
+        self.iconName = [aDecoder decodeObjectForKey:@"IconName"];
     }
     return self;
     
@@ -63,6 +74,7 @@
 {
     [aCoder encodeObject:self.name forKey:@"Name"];
     [aCoder encodeObject:self.items forKey:@"Items"];
+    [aCoder encodeObject:self.iconName forKey:@"IconName"];
 }
 
 
