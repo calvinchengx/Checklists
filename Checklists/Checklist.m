@@ -7,6 +7,7 @@
 //
 
 #import "Checklist.h"
+#import "ChecklistItem.h"
 
 @implementation Checklist
 
@@ -22,13 +23,23 @@
 }
 */
 
-
 -(NSMutableArray *)items
 {
     if(!items) {
         items = [[NSMutableArray alloc] init];
     }
     return items;
+}
+
+- (int)countUncheckedItems
+{
+    int count = 0;
+    for (ChecklistItem *item in self.items) {
+        if (!item.checked) {
+            count += 1;
+        }
+    }
+    return count;
 }
 
 // Equivalent code - (id)init and -(NSMutableArray *)items

@@ -31,12 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
@@ -44,6 +38,12 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -57,7 +57,6 @@
     if (index >=0 && index < [self.dataModel.lists count]) {
         Checklist *checklist = [self.dataModel.lists objectAtIndex:index];
         [self performSegueWithIdentifier:@"ShowChecklist" sender:checklist];
-        
     }
 }
 
@@ -67,8 +66,6 @@
 }
 
 #pragma mark - Table view data source
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 // who and where calls this method? // 
 {
@@ -82,14 +79,22 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     Checklist *checklist = [self.dataModel.lists objectAtIndex:indexPath.row];
     
     cell.textLabel.text = checklist.name;
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    // Configure the cell...
+    
+    int count = [checklist countUncheckedItems];
+    if ([checklist.items count] == 0) {
+        cell.detailTextLabel.text = @"(No Items)";
+    } else if (count == 0) {
+        cell.detailTextLabel.text = @"All Done";
+    } else {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Remaining", [checklist countUncheckedItems]];
+    }
     
     return cell;
 }
@@ -217,4 +222,3 @@
 }
 
 @end
-
