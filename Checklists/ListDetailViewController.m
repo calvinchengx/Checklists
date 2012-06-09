@@ -7,13 +7,16 @@
 //
 
 #import "ListDetailViewController.h"
+#import "IconPickerViewController.h"
 #import "Checklist.h"
 
 @interface ListDetailViewController ()
 
 @end
 
-@implementation ListDetailViewController
+@implementation ListDetailViewController {
+    NSString *iconName;
+}
 
 @synthesize textField;
 @synthesize doneBarButton;
@@ -34,6 +37,7 @@
 {
     [super viewDidLoad];
 
+
     if (self.checklistToEdit !=nil) {
         self.title = @"Edit Checklist";
         self.textField.text = self.checklistToEdit.name;
@@ -45,6 +49,8 @@
 {
     [self setTextField:nil];
     [self setDoneBarButton:nil];
+    [self setIconImageView:nil];
+    
     [super viewDidUnload];
 }
 
@@ -79,6 +85,22 @@
     
 }
 
+
+- (BOOL)textField:(UITextField *)theTextfield shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+{
+    NSString *newText = [theTextfield.text stringByReplacingCharactersInRange:range withString:string];
+    self.doneBarButton.enabled = ([newText length] > 0);
+    return YES;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder])) {
+        iconName = @"Folder";
+    }
+    return self;
+}
+
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 1) {
@@ -86,14 +108,13 @@
     } else {
         return nil;        
     }
-
 }
 
-- (BOOL)textField:(UITextField *)theTextfield shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+- (void)iconPicker:(IconPickerViewController *)picker didPickIcon:(NSString *)theIconName
 {
-    NSString *newText = [theTextfield.text stringByReplacingCharactersInRange:range withString:string];
-    self.doneBarButton.enabled = ([newText length] > 0);
-    return YES;
+    iconName = theIconName;
+    self.iconImageView.image = [UIImage imageNamed:iconName];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

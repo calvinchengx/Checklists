@@ -15,15 +15,6 @@
 @synthesize items;
 @synthesize iconName;
 
-/*
--(id) init {
-    if((self = [super init])) {
-        self.items = [NSMutableArray array];
-    }
-    return self;
-}
-*/
-
 - (id)init
 {
     if ((self = [super init])) {

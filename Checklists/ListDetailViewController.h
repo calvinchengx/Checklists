@@ -14,9 +14,7 @@
 @protocol ListDetailViewControllerDelegate <NSObject>
 
 - (void)listDetailViewControllerDidCancel:(ListDetailViewController *)controller;
-
 - (void)listDetailViewController:(ListDetailViewController *)controller didFinishAddingChecklist:(Checklist *)checklist;
-
 - (void)listDetailViewController:(ListDetailViewController *)controller didFinishEditingChecklist:(Checklist *)checklist;
 
 @end
@@ -31,8 +29,7 @@
 
 @property (nonatomic, strong) Checklist *checklistToEdit;
 
-@property (nonatomic, strong) UIImageView *iconImageView;
-
+@property (strong, nonatomic) IBOutlet UIImageView *iconImageView;
 
 - (IBAction)cancel;
 - (IBAction)done;
