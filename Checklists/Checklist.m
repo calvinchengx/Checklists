@@ -31,6 +31,11 @@
     return items;
 }
 
+- (NSComparisonResult)compare:(Checklist *)otherChecklist
+{
+    return [self.name localizedCaseInsensitiveCompare:otherChecklist.name];
+}
+
 - (int)countUncheckedItems
 {
     int count = 0;
