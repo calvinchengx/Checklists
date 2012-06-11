@@ -19,6 +19,7 @@
 
 @implementation ListDetailViewController {
     NSString *iconName;
+    NSString *name;
 }
 
 @synthesize textField;
@@ -27,18 +28,27 @@
 @synthesize checklistToEdit;
 @synthesize iconImageView;
 
+- (void)updateDoneBarButton
+{
+    self.doneBarButton.enabled = ([name length] > 0);
+}
+
+- (void)updateIconName
+{
+    self.iconImageView.image = [UIImage imageNamed:iconName];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     if (self.checklistToEdit !=nil) {
         self.title = @"Edit Checklist";
-        self.textField.text = self.checklistToEdit.name;
-        self.doneBarButton.enabled = YES;
-        iconName = self.checklistToEdit.iconName;
     }
 
-    self.iconImageView.image = [UIImage imageNamed:iconName];
+    self.textField.text = name;
+    [self updateDoneBarButton];
+    [self updateIconName];
 }
 
 - (void)viewDidUnload
@@ -88,8 +98,8 @@
 
 - (BOOL)textField:(UITextField *)theTextfield shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 {
-    NSString *newText = [theTextfield.text stringByReplacingCharactersInRange:range withString:string];
-    self.doneBarButton.enabled = ([newText length] > 0);
+    name = [theTextfield.text stringByReplacingCharactersInRange:range withString:string];
+    [self updateDoneBarButton];
     return YES;
 }
 
@@ -123,6 +133,12 @@
     iconName = theIconName;
     self.iconImageView.image = [UIImage imageNamed:iconName];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)theTextField
+{
+    name = theTextField.text;
+    [self updateDoneBarButton];
 }
 
 @end
