@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ChecklistItem.h"
+#import "DatePickerViewController.h"
 
 @class ItemDetailViewController;
 @class ChecklistItem;
@@ -22,18 +23,17 @@
 
 @end
 
-@interface ItemDetailViewController : UITableViewController <UITextFieldDelegate>
+@interface ItemDetailViewController : UITableViewController <UITextFieldDelegate, DatePickerViewControllerDelegate>
 // UITextFieldDelegate is a pre-written protocol so we just have to make it
 // available to our AddItemViewController.m by specifying < >, so we have
 // access to UITextFieldDelegate's methods.
 
 @property (nonatomic, weak) id <ItemDetailViewControllerDelegate> delegate;
-
-@property (strong, nonatomic) IBOutlet UITextField *textField;
-
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
-
 @property (nonatomic, strong) ChecklistItem *itemToEdit;
+@property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
+@property (nonatomic, strong) IBOutlet UISwitch *switchControl;
+@property (nonatomic, strong) IBOutlet UILabel *dueDateLabel;
 
 - (IBAction)cancel;
 - (IBAction)done;

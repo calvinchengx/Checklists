@@ -25,6 +25,7 @@
 		3E724CCA15857FEE00E314A0 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 3E724CC315857FEE00E314A0 /* iTunesArtwork */; };
 		3E724CCF1585811F00E314A0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E724CCD1585811F00E314A0 /* Default.png */; };
 		3E724CD01585811F00E314A0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E724CCE1585811F00E314A0 /* Default@2x.png */; };
+		3E724CD31585A22600E314A0 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E724CD21585A22600E314A0 /* DatePickerViewController.m */; };
 		3EB912EA157C714F00BE8FEA /* Checklist.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB912E9157C714F00BE8FEA /* Checklist.m */; };
 		3EB912ED157C834A00BE8FEA /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB912EC157C834A00BE8FEA /* ListDetailViewController.m */; };
 		3EB912F0157C9A4500BE8FEA /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB912EF157C9A4400BE8FEA /* AllListsViewController.m */; };
@@ -78,6 +79,8 @@
 		3E724CC315857FEE00E314A0 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		3E724CCD1585811F00E314A0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3E724CCE1585811F00E314A0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3E724CD11585A22600E314A0 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
+		3E724CD21585A22600E314A0 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
 		3EB912E8157C714F00BE8FEA /* Checklist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checklist.h; sourceTree = "<group>"; };
 		3EB912E9157C714F00BE8FEA /* Checklist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Checklist.m; sourceTree = "<group>"; };
 		3EB912EB157C834A00BE8FEA /* ListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDetailViewController.h; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				3E5F3DFA157466A30097C9F2 /* MainStoryboard.storyboard */,
 				3EEF20F31578C39E00A41882 /* ItemDetailViewController.h */,
 				3EEF20F41578C39F00A41882 /* ItemDetailViewController.m */,
+				3E724CD11585A22600E314A0 /* DatePickerViewController.h */,
+				3E724CD21585A22600E314A0 /* DatePickerViewController.m */,
 				3E5F3DFD157466A30097C9F2 /* ChecklistViewController.h */,
 				3E5F3DFE157466A30097C9F2 /* ChecklistViewController.m */,
 				3EEF20EF1578940100A41882 /* ChecklistItem.h */,
@@ -346,6 +351,7 @@
 				3EB912F0157C9A4500BE8FEA /* AllListsViewController.m in Sources */,
 				3E4B401D157F507600A1B64F /* DataModel.m in Sources */,
 				3EFA9AF515830C0100BB2FA5 /* IconPickerViewController.m in Sources */,
+				3E724CD31585A22600E314A0 /* DatePickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

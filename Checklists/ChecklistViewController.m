@@ -67,9 +67,6 @@
 }
 /* END controls the generation of cells */
 
-
-
-
 /* HELPER functions to make our business logic above cleaner */
 - (void)configureCheckmarkForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
 {
@@ -87,11 +84,9 @@
 - (void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
 {
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
-    label.text = item.text;
+    //label.text = item.text;
+    label.text = [NSString stringWithFormat:@"%d: %@", item.itemId, item.text];
 }
-
-
-
 /* END HELPER functions */
 
 /* handles the user's "selection" tap */
