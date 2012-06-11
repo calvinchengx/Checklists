@@ -24,25 +24,18 @@
 @synthesize checklistToEdit;
 @synthesize iconImageView;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
 
     if (self.checklistToEdit !=nil) {
         self.title = @"Edit Checklist";
         self.textField.text = self.checklistToEdit.name;
         self.doneBarButton.enabled = YES;
+        iconName = self.checklistToEdit.iconName;
     }
+
+    self.iconImageView.image = [UIImage imageNamed:iconName];
 }
 
 - (void)viewDidUnload
@@ -76,12 +69,16 @@
     if (self.checklistToEdit == nil) {
         Checklist *checklist = [[Checklist alloc] init];
         checklist.name = self.textField.text;
+        checklist.iconName = iconName;
+        
         [self.delegate listDetailViewController:self didFinishAddingChecklist:checklist];
-
     } else {
         self.checklistToEdit.name = self.textField.text;
+        self.checklistToEdit.iconName = iconName;
+        
         [self.delegate listDetailViewController:self didFinishEditingChecklist:self.checklistToEdit];
     }
+    
     
 }
 
@@ -107,6 +104,14 @@
         return indexPath;        
     } else {
         return nil;        
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"PickIcon"]) {
+        IconPickerViewController *controller = segue.destinationViewController;
+        controller.delegate = self;
     }
 }
 

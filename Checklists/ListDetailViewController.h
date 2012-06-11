@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IconPickerViewController.h"
 
 @class ListDetailViewController;
 @class Checklist; // we understand that this is a forward declaration of the class Checklist which will be resolved at runtime. But why don't we simpy #import "Checklist.h" - won't that be better? Understanding this helps us to know when to use #import and when to use @class.
@@ -19,7 +20,7 @@
 
 @end
 
-@interface ListDetailViewController : UITableViewController
+@interface ListDetailViewController : UITableViewController <UITextFieldDelegate, IconPickerViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UITextField *textField;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneBarButton;
