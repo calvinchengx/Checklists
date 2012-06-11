@@ -102,4 +102,10 @@
     dateLabel.text = [formatter stringFromDate:date];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+// A method in the table view delegate protocol that allows us to add 77 points (or whatever value we desire) of empty space above our tableView row, thus centering this row in our tableView.
+{
+    return 77;
+}
+
 @end
