@@ -17,5 +17,6 @@
 @property (nonatomic, assign) int itemId;
 
 - (void)toggleChecked;
+- (void)scheduleNotification;
 
 @end
