@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// TODO: ListDetailViewController has a problem if we are inside the Icon Picker and a low memory warning occurs. 
+//       Fix it using the design pattern seen in ItemDetailViewController -> DatePickerViewController
+
 #import "ListDetailViewController.h"
 #import "IconPickerViewController.h"
 #import "Checklist.h"

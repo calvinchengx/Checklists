@@ -14,7 +14,9 @@
 @end
 
 @implementation ItemDetailViewController {
+    BOOL shouldRemind;
     NSDate *dueDate;
+    NSString *text;
 }
 
 @synthesize delegate;
@@ -51,6 +53,19 @@
     }
 }
 
+- (void)setItemToEdit:(ChecklistItem *)newItem
+{
+    // writing our custom setter so that we invoke this method whenever we do `controller.itemToEdit = anItem;`
+    // This caters to the scenario where a cancelled DatePickerViewController permits us to retrieve the in-memory
+    // data sources for the item currently being edited
+    if (itemToEdit != newItem) {
+        itemToEdit = newItem;
+        text = itemToEdit.text;
+        shouldRemind = itemToEdit.shouldRemind;
+        dueDate = itemToEdit.dueDate;
+    }
+}
+
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 2) {
@@ -60,21 +75,23 @@
     }
 }
 
+- (void)updateDoneBarButton
+{
+    self.doneBarButton.enabled = ([text length] > 0);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     if (self.itemToEdit != nil) {
-        self.title = @"Edit Item";
-        self.textField.text = self.itemToEdit.text;
-        self.doneBarButton.enabled = YES;
-        self.switchControl.on = self.itemToEdit.shouldRemind;
-        dueDate = self.itemToEdit.dueDate;
-    } else {
-        self.switchControl.on = NO;
-        dueDate = [NSDate date];
+        self.title = @"Edit Item"; 
     }
     
+    self.textField.text = text;
+    self.switchControl.on = shouldRemind;
+    
+    [self updateDoneBarButton];
     [self updateDueDateLabel];
 }
 
@@ -100,8 +117,8 @@
 
 - (BOOL)textField:(UITextField *)theTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    NSString *newText = [theTextField.text stringByReplacingCharactersInRange:range withString:string];
-    self.doneBarButton.enabled = ([newText length] > 0);
+    text = [theTextField.text stringByReplacingCharactersInRange:range withString:string];
+    [self updateDoneBarButton];
     return YES;
 }
 
@@ -134,6 +151,27 @@
     [self updateDueDateLabel];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)theTextField
+{
+    text = theTextField.text;
+    [self updateDoneBarButton];
+}
+
+- (IBAction)switchChanged:(UISwitch *)sender
+{
+    shouldRemind = sender.on;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder])) {
+        text = @"";
+        shouldRemind = NO;
+        dueDate = [NSDate date];
+    }
+    return self;
 }
 
 @end

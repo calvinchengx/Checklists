@@ -37,6 +37,7 @@
 
 - (IBAction)cancel;
 - (IBAction)done;
+- (IBAction)switchChanged:(UISwitch *)sender;
 
 @end
 
